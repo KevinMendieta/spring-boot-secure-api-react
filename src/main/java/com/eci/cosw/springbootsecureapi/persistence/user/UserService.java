@@ -1,4 +1,4 @@
-package com.eci.cosw.springbootsecureapi.service;
+package com.eci.cosw.springbootsecureapi.persistence.user;
 
 import com.eci.cosw.springbootsecureapi.model.User;
 

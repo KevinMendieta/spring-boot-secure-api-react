@@ -1,6 +1,7 @@
-package com.eci.cosw.springbootsecureapi.service;
+package com.eci.cosw.springbootsecureapi.persistence.user.impl;
 
 import com.eci.cosw.springbootsecureapi.model.User;
+import com.eci.cosw.springbootsecureapi.persistence.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
