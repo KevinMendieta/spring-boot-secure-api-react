@@ -5,15 +5,12 @@ import com.eci.cosw.springbootsecureapi.persistence.todo.TodoPersistence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("api")
 public class TodoController {
 
@@ -24,6 +21,12 @@ public class TodoController {
     public ResponseEntity<?> todos() {
         List<Todo> result = todoPersistence.getTodoList();
         return new ResponseEntity<>(result, HttpStatus.ACCEPTED);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/todos")
+    public ResponseEntity<?> addTodo(@RequestBody Todo todo) {
+        todoPersistence.addTodo(todo);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
 }

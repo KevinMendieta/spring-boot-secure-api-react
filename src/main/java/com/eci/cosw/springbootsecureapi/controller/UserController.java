@@ -15,7 +15,7 @@ import java.util.Date;
  * 8/21/17.
  */
 @RestController
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("user")
 public class UserController {
 
